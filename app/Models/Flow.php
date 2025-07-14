@@ -9,12 +9,13 @@ use function PHPSTORM_META\type;
 class Flow extends Model
 {
     protected $fillable = [
-        'budget_id',
+        'user_id',
         'category_id',
         'type',
         'amount',
         'description',
-        'timestamp',
+        'photo',
+        'date',
 
     ];
     //

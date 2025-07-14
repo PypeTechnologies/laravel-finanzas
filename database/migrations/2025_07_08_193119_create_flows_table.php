@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->enum('type', ['ingreso', 'gasto']);
             $table->decimal('amount', 10, 2);
-            $table->string('description')->nullable();
+            $table->string('description')->nullable()->columns(1)->fullwidth();
             $table->string('photo')->nullable();
+            $table->dateTime('date');
             $table->timestamps();
         });
     }
